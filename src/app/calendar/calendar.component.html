@@ -1,0 +1,29 @@
+<div class="calendar">
+    <div class="header">
+        <button (click)="prevMonth()">Prev</button>
+        <h2>{{ getMonthName(currentMonth) }} {{ currentYear }}</h2>
+        <button (click)="nextMonth()">Next</button>
+    </div>
+    <div class="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+    </div>
+    <div class="d-grid">
+
+        <div class="dateContainer" *ngFor="let date of calendarDates">
+            <span *ngIf="date.day > 0" class="pointer date" (click)="handleDateClick(date)">{{ date.day }}</span>
+            <span *ngIf="date.day <= 0">-</span>
+            <div *ngIf="date.events.length > 0" class="elementDiv">
+                <div class="event pointer" (click)="handelEventClick(date,event)" *ngFor="let event of date.events" [title]="event.title">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-date-model *ngIf="datesModel" [data]="datesModelData" (eventDeleted)="eventDeleted($event)" (eventAdded)="addNewEvent($event)" (closeModel)="closeModel($event,'date')"></app-date-model>
+<app-event-model *ngIf="eventModal"[eventData]="eventModelData" (changeDate)="eventEdited($event)" (closeModel)="eventModal=!eventModal" ></app-event-model>

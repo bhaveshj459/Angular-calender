@@ -1,0 +1,61 @@
+.calendar {
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+}
+.d-grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 14px;
+    width: 100%;
+  }
+  
+  .dateContainer {
+    display: inline-block;
+    width: 50px;
+    height: 70px;
+    line-height: 40px;
+    text-align: center;
+    margin: 2px;
+    margin-right: 23px;
+    border: 1px solid #ccc;
+    /* cursor: pointer; */
+  }
+  .date{
+    width: 100%;
+    display: block;
+  }
+  .pointer{
+    cursor: pointer;
+  }
+  
+  .event {
+    font-size: 12px;
+    /* padding: 2px; */
+    width: 10px;
+    height: 11px;
+    border-radius: 97px;
+    background-color: #f1f1f1;
+  }
+  
+  .elementDiv{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }

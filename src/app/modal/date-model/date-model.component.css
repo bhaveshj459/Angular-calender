@@ -1,0 +1,26 @@
+.modal{
+    display: block;
+}
+.eventTable th, td{
+    padding: 20px 30px;
+}
+table.eventTable{
+    width: 100%;
+}
+.eventForm th, td{
+    padding: 20px 10px;
+}
+table.eventForm{
+    width: 100%;
+}
+.addEventBtn{
+    float: right;
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid grey;
+    font-weight: 300;
+}
+.addEventBtn:hover{
+    border: 2px solid grey;
+    font-weight: 400;
+}

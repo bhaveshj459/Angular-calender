@@ -1,0 +1,44 @@
+<div class="modal fade show" id="exampleModalCenter" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{data.selectedDate.getDate()
+          <10?'0'+data.selectedDate.getDate():data.selectedDate.getDate()}}
+            -{{data.selectedDate.getMonth()<10?'0'+data.selectedDate.getMonth():data.selectedDate.getMonth()}}-{{data.selectedDate.getFullYear()}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+      <div class="modal-body">
+        <button class="addEventBtn" (click)="showEventForm=!showEventForm">Add New Event</button>
+        <table class="eventForm" *ngIf="showEventForm">
+          <tr>
+            <td> <input type="text" name="title" [(ngModel)]="eventTitle" placeholder="Title">
+            </td>
+            <td><input type="text" name="description" [(ngModel)]="eventDesc"  placeholder="description"></td>
+            <td>
+              <button class="addEventBtn" (click)="addEvent()">Add</button>
+            </td>
+          </tr>
+        </table>
+        <table class="eventTable" *ngIf="data.events.length > 0">
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let event of data.events">
+            <td>{{event.title}}
+            </td>
+            <td>{{event.description}}</td>
+            <td><i class="fa fa-trash cursor-pointer" (click)="deleteEvent(event)"></i></td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
