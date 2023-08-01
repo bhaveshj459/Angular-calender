@@ -20,6 +20,7 @@
             <span *ngIf="date.day <= 0">-</span>
             <div *ngIf="date.events.length > 0" class="elementDiv">
                 <div class="event pointer" (click)="handelEventClick(date,event)" *ngFor="let event of date.events" [title]="event.title">
+                    {{event.title}}
                 </div>
             </div>
         </div>

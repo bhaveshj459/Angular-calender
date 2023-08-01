@@ -31,6 +31,7 @@ export class EventModelComponent implements OnInit{
   dateChanged(){
     const temp = new Date(this.defaultDate);
     this.changeDate.emit({date: temp, title: this.eventData!.title, description: this.eventData!.description })
+    this.close()
   }
 
 }

@@ -10,6 +10,7 @@ import { ModalModule } from "./modal/modal.module";
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { UserModule } from "./user/user.module";
 
 @NgModule({
     declarations: [
@@ -24,6 +25,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
         NgbModule,
         NgbModalModule,
         ModalModule,
+        AngularFireAuthModule,
+        AngularFirestoreModule,
+        UserModule,
         AngularFireModule.initializeApp({
             apiKey: "AIzaSyDgGw_nyLXucS9a9iYQQPfdnJkcMx4DZyk",
             authDomain: "angular-calender-7c174a.firebaseapp.com",
@@ -31,8 +35,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
             storageBucket: "angular-calender-7c174a.appspot.com",
             appId: "1:598861738859:web:8dc3b0b5f9d94af5cbd22e"
         }),
-        AngularFireAuthModule,
-        AngularFirestoreModule,
+        
     ]
 })
 export class AppModule { }

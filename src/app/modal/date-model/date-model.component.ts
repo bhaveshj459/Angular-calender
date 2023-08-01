@@ -44,18 +44,15 @@ export class DateModelComponent implements OnInit {
       const day = this.data.selectedDate.getDate().toString().padStart(2, '0');
       const month = (this.data.selectedDate.getMonth() + 1).toString().padStart(2, '0');
       const year = this.data.selectedDate.getFullYear();
-      this.data.events.forEach((evt) => {
-        temp.push({ date: `${day}-${month}-${year}`, title: evt.title, description: evt.description })
-        console.log(temp);
-
-      })
+      temp={ date: `${day}-${month}-${year}`, title: this.eventTitle, description: this.eventTitle }
 
       this.eventAdded.emit(temp);
+      this.eventDesc='';
+      this.eventTitle=''
     }
 
   }
   deleteEvent(event: any) {
-
     const indexToRemove = this.data.events.indexOf(event)
     if (indexToRemove !== -1) {
       this.data.events.splice(indexToRemove, 1);

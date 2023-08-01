@@ -35,6 +35,8 @@ export class CalendarComponent implements OnInit {
     this.currentMonth = today.getMonth();
     this.currentYear = today.getFullYear();
     if (localStorage.getItem('eventlist')) {
+      console.log( JSON.parse(localStorage.getItem('eventlist')!));
+      
       this.dataEvents = JSON.parse(localStorage.getItem('eventlist')!);
     }
     this.generateCalendarDates(this.currentYear, this.currentMonth);
@@ -125,7 +127,10 @@ export class CalendarComponent implements OnInit {
 
   addNewEvent(event: any) {
     this.dataEvents.push(event);
-    this.dataEvents = this.dataEvents.flat()
+    console.log(this.dataEvents);
+    
+    this.dataEvents = this.dataEvents.flat();
+    console.log(this.dataEvents);
     localStorage.setItem('eventlist', JSON.stringify(this.dataEvents))
   }
   eventDeleted(event: any) {
